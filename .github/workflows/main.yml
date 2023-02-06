@@ -20,7 +20,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: npm ci
-      - run: npm type-check
+      - run: npm run type-check
       - run: npm run test:ci
       - id: Build-Vue
         uses: xRealNeon/VuePagesAction@1.0.1
