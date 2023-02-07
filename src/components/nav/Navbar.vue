@@ -25,17 +25,17 @@ export default {
 
 <template>
   <div
-    class="fixed flex justify-center z-50 px-16 w-full transition-all ease-in-out duration-300"
-    :class="isScrolled && 'backdrop-filter backdrop-blur'">
+    class="fixed flex justify-center z-50 px-4 md:px-16 w-full bg-white drop-shadow-xl">
     <nav
-      class="border-b border-white/40 py-6 w-full max-w-screen-lg transition-all ease-in-out duration-300"
-      :class="isScrolled && 'py-2'">
+      class="py-2 w-full max-w-screen-lg transition-spacing ease-in-out duration-300">
       <div class="flex">
         <div><span class="font-cursive text-2xl">Leia & Joel</span></div>
         <div class="ml-auto"></div>
-        <NavLink href="#location">Location</NavLink>
-        <NavLink href="#schedule">Schedule</NavLink>
-        <NavLink href="#invitation">RSVP</NavLink>
+        <div class="hidden xs:flex">
+          <NavLink href="#location">Location</NavLink>
+          <NavLink href="#schedule">Schedule</NavLink>
+          <NavLink href="#invitation">RSVP</NavLink>
+        </div>
       </div>
     </nav>
   </div>

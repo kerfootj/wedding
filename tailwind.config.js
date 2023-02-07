@@ -7,7 +7,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        hero: "linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(32, 96, 128, 0.4)), url(/img/kamloops.jpg)",
+        kamloops:
+          "linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(32, 96, 128, 0.4)), url(/img/kamloops.jpg)",
+        sunset:
+          "linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(32, 96, 128, 0.4)), url(/img/sunset.png)",
       },
       fontFamily: {
         serif: ["Lora", ...defaultTheme.fontFamily.serif],
@@ -15,6 +18,10 @@ module.exports = {
       },
       fontSize: {
         hero: "10rem",
+      },
+      screens: {
+        xs: "440px",
+        ...defaultTheme.screens,
       },
       transitionProperty: {
         spacing: "margin, padding",

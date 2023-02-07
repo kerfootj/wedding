@@ -1,9 +1,5 @@
-<script lang="ts">
-export default {
-  props: {
-    href: String,
-  },
-};
+<script setup lang="ts">
+defineProps<{ href: string }>();
 </script>
 
 <template>
