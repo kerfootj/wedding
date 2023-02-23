@@ -1,13 +1,10 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
 import PageContainer from "./components/common/PageContainer.vue";
-import Hero from "./components/hero/Hero.vue";
-import Invitation from "./components/invitation/Invitation.vue";
 import Navbar from "./components/nav/Navbar.vue";
-
-onMounted(() => {
-  console.log("here");
-});
+import Hero from "./components/hero/Hero.vue";
+import Map from "./components/location/Map.vue";
+import Invitation from "./components/invitation/Invitation.vue";
+import RSVP from "./components/rsvp/RSVP.vue";
 </script>
 
 <template>
@@ -16,5 +13,7 @@ onMounted(() => {
     <Hero image="kamloops" />
     <Invitation />
     <Hero image="sunset" />
+    <Map />
+    <RSVP />
   </PageContainer>
 </template>
