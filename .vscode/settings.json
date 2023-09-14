@@ -1,0 +1,9 @@
+{
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": ["source.sortImports", "source.fixAll.eslint"],
+    "eslint.options": {
+        "fixTypes": ["problem", "suggestion", "layout"]
+    },
+    "cSpell.words": ["haviland", "Kamloops", "leia", "tailwindcss", "webp"],
+    "fontAwesomeAutocomplete.patterns": ["**/*.tsx", "**/*.html"]
+}
