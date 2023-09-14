@@ -17,7 +17,7 @@ function Hero() {
             id="hero"
             className="relative h-screen w-screen overflow-x-hidden"
         >
-            <div className="drop-shadow-dark absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 text-gray-100 sm:gap-8">
+            <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 text-gray-100 drop-shadow-dark sm:gap-8">
                 <Image
                     src="/images/floral-divider.webp"
                     alt="A string of leaves and berries with a single flower in the middle"
