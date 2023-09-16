@@ -4,7 +4,16 @@
     "eslint.options": {
         "fixTypes": ["problem", "suggestion", "layout"]
     },
-    "cSpell.words": ["haviland", "kamloops", "leia", "tailwindcss", "varela", "webp"],
+    "cSpell.words": [
+        "haviland",
+        "kamloops",
+        "leia",
+        "nocache",
+        "noimageindex",
+        "tailwindcss",
+        "varela",
+        "webp"
+    ],
     "fontAwesomeAutocomplete.patterns": ["**/*.tsx", "**/*.html"],
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
