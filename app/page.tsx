@@ -89,5 +89,9 @@ function FlowerDivider() {
 }
 
 function MrsMr() {
-    return <div className="bg-glade-50 h-72"></div>;
+    return (
+        <div className="bg-glade-50">
+            <div className="flex h-72 "></div>
+        </div>
+    );
 }
