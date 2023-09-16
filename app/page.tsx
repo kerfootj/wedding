@@ -18,30 +18,34 @@ function Hero() {
     return (
         <section id="hero" className="relative h-screen w-screen overflow-x-hidden">
             <div className="absolute inset-0 z-10 flex h-screen select-none flex-col items-center justify-center gap-3 text-gray-100 drop-shadow-dark sm:gap-8">
-                <Image
-                    src="/images/floral-divider.webp"
-                    alt="A string of leaves and berries with a single flower in the middle"
-                    className="rotate-180 scale-50 transform animate-fade-in-up opacity-0 animation-delay-1500 sm:scale-100"
-                    draggable={false}
-                    width={200}
-                    height={32}
-                />
+                <div className="rotate-180">
+                    <Image
+                        src="/images/floral-divider.webp"
+                        alt="A string of leaves and berries with a single flower in the middle"
+                        className="scale-50 transform animate-fade-in-down opacity-0 animation-delay-1500 sm:scale-100"
+                        draggable={false}
+                        width={200}
+                        height={32}
+                    />
+                </div>
 
-                <h2 className="animate-fade-in-down font-serif text-2xl opacity-0 animation-delay-1000 md:text-4xl">
+                <h2 className="animate-fade-in-down px-4 text-center font-serif text-4xl opacity-0 animation-delay-1000 md:text-5xl">
                     The Wedding Celebration Of
                 </h2>
-                <h1 className="animate-fade-in-down font-cursive text-4xl opacity-0 animation-delay-500 md:text-8xl">
+                <h1 className="animate-fade-in-down font-cursive text-7xl opacity-0 animation-delay-500 md:text-9xl">
                     Leia & Joel
                 </h1>
 
-                <Image
-                    src="/images/floral-divider.webp"
-                    alt="A string of leaves and berries with a single flower in the middle"
-                    className="scale-50 transform animate-fade-in-down opacity-0 animation-delay-1500 sm:scale-100"
-                    draggable={false}
-                    width={200}
-                    height={32}
-                />
+                <div>
+                    <Image
+                        src="/images/floral-divider.webp"
+                        alt="A string of leaves and berries with a single flower in the middle"
+                        className="scale-50 transform animate-fade-in-down opacity-0 animation-delay-1500 sm:scale-100"
+                        draggable={false}
+                        width={200}
+                        height={32}
+                    />
+                </div>
             </div>
 
             <Image
