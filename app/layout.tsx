@@ -52,6 +52,13 @@ export const metadata: Metadata = {
         ],
     },
 
+    icons: {
+        icon: '/icons/favicon.ico',
+        shortcut: '/icons/favicon.android-chrome-512x512.png',
+        apple: '/icons/apple-touch-icon.png',
+    },
+    manifest: '/icons/site.webmanifest',
+
     robots: {
         index: false,
         follow: true,

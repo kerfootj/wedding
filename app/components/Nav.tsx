@@ -61,12 +61,11 @@ export function Nav() {
                 </div>
                 <div className="hidden items-center justify-center gap-8 text-center sm:flex">
                     {links.map((link, index) => (
-                        <>
+                        <div key={link.name} className="flex items-center gap-8">
                             {index > 0 && (
                                 <i className="fas fa-heart fa-2xs text-lilac-300" />
                             )}
                             <a
-                                key={link.name}
                                 href={link.href}
                                 className={`inline-flex items-center text-sm font-semibold transition-colors ${textColor()} ${
                                     selected === link.name
@@ -77,7 +76,7 @@ export function Nav() {
                             >
                                 {link.name}
                             </a>
-                        </>
+                        </div>
                     ))}
                 </div>
             </div>
