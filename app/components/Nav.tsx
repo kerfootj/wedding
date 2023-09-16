@@ -12,8 +12,8 @@ const links = [
         href: '#story',
     },
     {
-        name: 'Where & When',
-        href: '#where-and-when',
+        name: 'When & Where',
+        href: '#when-and-where',
     },
     {
         name: 'Gallery',
@@ -39,6 +39,8 @@ export function Nav() {
         return () => window.removeEventListener('scroll', handleScroll);
     });
 
+    const textColor = () => (position < 32 ? 'text-gray-100' : 'text-neutral-900');
+
     return (
         <header
             className={`fixed z-50 flex w-full select-none justify-center border-b px-4 transition-colors duration-500 sm:px-6 lg:px-8 ${
@@ -61,15 +63,15 @@ export function Nav() {
                     {links.map((link, index) => (
                         <>
                             {index > 0 && (
-                                <i className="fas fa-heart fa-2xs text-violet-300" />
+                                <i className="fas fa-heart fa-2xs text-lilac-300" />
                             )}
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className={`inline-flex items-center text-sm font-semibold transition-colors ${
+                                className={`inline-flex items-center text-sm font-semibold transition-colors ${textColor()} ${
                                     selected === link.name
-                                        ? 'text-violet-300'
-                                        : 'hover:text-violet-200'
+                                        ? 'text-lilac-300'
+                                        : 'hover:text-lilac-400'
                                 }`}
                                 onClick={() => setSelected(link.name)}
                             >
