@@ -17,27 +17,29 @@ export default function Home() {
 function Hero() {
     return (
         <section id="hero" className="relative h-screen w-screen overflow-x-hidden">
-            <div className="absolute inset-0 z-10 flex select-none flex-col items-center justify-center gap-3 text-gray-100 drop-shadow-dark sm:gap-8">
+            <div className="absolute inset-0 z-10 flex h-screen select-none flex-col items-center justify-center gap-3 text-gray-100 drop-shadow-dark sm:gap-8">
                 <Image
                     src="/images/floral-divider.webp"
                     alt="A string of leaves and berries with a single flower in the middle"
-                    className="rotate-180 scale-50 transform sm:scale-100"
+                    className="animate-fade-in-up animation-delay-1500 rotate-180 scale-50 transform opacity-0 sm:scale-100"
                     draggable={false}
-                    width={300}
+                    width={200}
                     height={32}
                 />
 
-                <h2 className="font-serif text-2xl md:text-4xl">
+                <h2 className="animate-fade-in-down animation-delay-1000 font-serif text-2xl opacity-0 md:text-4xl">
                     The Wedding Celebration Of
                 </h2>
-                <h1 className="font-cursive text-4xl md:text-8xl">Leia & Joel</h1>
+                <h1 className="animate-fade-in-down animation-delay-500 font-cursive text-4xl opacity-0 md:text-8xl">
+                    Leia & Joel
+                </h1>
 
                 <Image
                     src="/images/floral-divider.webp"
                     alt="A string of leaves and berries with a single flower in the middle"
-                    className="scale-50 transform sm:scale-100"
+                    className="animate-fade-in-down animation-delay-1500 scale-50 transform opacity-0 sm:scale-100"
                     draggable={false}
-                    width={300}
+                    width={200}
                     height={32}
                 />
             </div>

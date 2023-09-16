@@ -8,6 +8,10 @@ const config: Config = {
     ],
     theme: {
         extend: {
+            animation: {
+                'fade-in-down': 'fade-in-down 0.5s ease-out 0s 1 forwards',
+                'fade-in-up': 'fade-in-up 0.5s ease-out 0s 1 forwards',
+            },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
                 'gradient-conic':
@@ -48,12 +52,31 @@ const config: Config = {
                 cursive: ['var(--font-cursive)'],
                 numbers: ['var(--font-numbers)'],
             },
-        },
-        perspective: {
-            fold: '300px',
+            keyframes: {
+                'fade-in-down': {
+                    '0%': {
+                        opacity: '0',
+                        transform: 'translateY(-32px)',
+                    },
+                    '100%': {
+                        opacity: '1',
+                        transform: 'translateY(0)',
+                    },
+                },
+                'fade-in-up': {
+                    '0%': {
+                        opacity: '0',
+                        transform: 'translateY(32px)',
+                    },
+                    '100%': {
+                        opacity: '1',
+                        transform: 'translateY(0)',
+                    },
+                },
+            },
         },
     },
-    plugins: [],
+    plugins: [require('tailwindcss-animation-delay')],
 };
 
 export default config;
