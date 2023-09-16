@@ -21,23 +21,23 @@ function Hero() {
                 <Image
                     src="/images/floral-divider.webp"
                     alt="A string of leaves and berries with a single flower in the middle"
-                    className="animate-fade-in-up animation-delay-1500 rotate-180 scale-50 transform opacity-0 sm:scale-100"
+                    className="rotate-180 scale-50 transform animate-fade-in-up opacity-0 animation-delay-1500 sm:scale-100"
                     draggable={false}
                     width={200}
                     height={32}
                 />
 
-                <h2 className="animate-fade-in-down animation-delay-1000 font-serif text-2xl opacity-0 md:text-4xl">
+                <h2 className="animate-fade-in-down font-serif text-2xl opacity-0 animation-delay-1000 md:text-4xl">
                     The Wedding Celebration Of
                 </h2>
-                <h1 className="animate-fade-in-down animation-delay-500 font-cursive text-4xl opacity-0 md:text-8xl">
+                <h1 className="animate-fade-in-down font-cursive text-4xl opacity-0 animation-delay-500 md:text-8xl">
                     Leia & Joel
                 </h1>
 
                 <Image
                     src="/images/floral-divider.webp"
                     alt="A string of leaves and berries with a single flower in the middle"
-                    className="animate-fade-in-down animation-delay-1500 scale-50 transform opacity-0 sm:scale-100"
+                    className="scale-50 transform animate-fade-in-down opacity-0 animation-delay-1500 sm:scale-100"
                     draggable={false}
                     width={200}
                     height={32}
@@ -91,9 +91,5 @@ function FlowerDivider() {
 }
 
 function MrsMr() {
-    return (
-        <div className="bg-glade-50">
-            <div className="flex h-72 "></div>
-        </div>
-    );
+    return <div className="flex h-72 bg-glade-50"></div>;
 }

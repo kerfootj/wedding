@@ -12,10 +12,8 @@
         "noimageindex",
         "tailwindcss",
         "varela",
-        "webp"
+        "webp",
+        "westsyde"
     ],
-    "fontAwesomeAutocomplete.patterns": ["**/*.tsx", "**/*.html"],
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    "fontAwesomeAutocomplete.patterns": ["**/*.tsx", "**/*.html"]
 }
