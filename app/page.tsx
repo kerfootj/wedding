@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { FlipClock } from './components/FlipClock';
+import { Map } from './components/Map';
 import { Nav } from './components/Nav';
 
 export default function Home() {
@@ -64,15 +65,21 @@ function WhereAndWhen() {
     return (
         <section id="when-and-where">
             <div className="relative mt-24 flex select-none flex-col items-center justify-center gap-4 text-neutral-900">
-                <h3 className="font-serif text-4xl md:text-6xl">May 18th, 2024</h3>
+                <h3 className="font-serif text-4xl text-neutral-700 drop-shadow-xl md:text-6xl">
+                    May 18th, 2024
+                </h3>
 
-                <div className="flex flex-col items-center text-neutral-600">
-                    <p className="text-lg">Kamloops BC</p>
-                    <p className="text-lg">6270 Westsyde Road</p>
+                <div className="my-12">
+                    <FlipClock />
                 </div>
 
-                <div className="my-16">
-                    <FlipClock />
+                <div className="flex flex-col items-center py-4 text-neutral-700 drop-shadow-xl">
+                    <p className="font-serif text-4xl md:text-6xl">Kamloops BC</p>
+                    <p className="font-serif text-xl md:text-2xl">6270 Westsyde Road</p>
+                </div>
+
+                <div className="pb-12 pt-4">
+                    <Map />
                 </div>
             </div>
         </section>
@@ -81,7 +88,7 @@ function WhereAndWhen() {
 
 function FlowerDivider() {
     return (
-        <div className="relative mt-12 flex h-1 w-full items-center justify-center sm:mt-16 md:mt-24">
+        <div className="relative mt-16 flex h-1 w-full items-center justify-center md:mt-24">
             <Image
                 src="/images/flower-ornament.webp"
                 alt="A collection of greenery and purple flowers"
