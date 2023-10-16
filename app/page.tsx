@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { FlipClock } from './components/FlipClock';
 import { Map } from './components/Map';
 import { Nav } from './components/Nav';
+import { RSVP } from './components/RSVP';
 import { OurTimeLine } from './components/TimeLine';
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
             <WhereAndWhen />
             <FlowerDivider />
             <OurTimeLine />
+            <RSVP />
         </>
     );
 }

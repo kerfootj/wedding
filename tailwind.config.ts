@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 const config: Config = {
     content: [
@@ -10,6 +11,7 @@ const config: Config = {
         extend: {
             animation: {
                 'fade-in-down': 'fade-in-down 0.5s ease-out 0s 1 forwards',
+                shuffle: 'shuffle 2s infinite both',
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -62,10 +64,48 @@ const config: Config = {
                         transform: 'translateY(0)',
                     },
                 },
+                shuffle: {
+                    '0%': {
+                        width: '0px',
+                        height: '0px',
+                        transform: 'translateX(-1.5em)',
+                    },
+                    '15%': {
+                        width: '1em',
+                        height: '1em',
+                        transform: 'translateX(-1.5em)',
+                        'z-index': '1',
+                    },
+                    '40%': {
+                        transform: 'translateX(0)',
+                        'z-index': '2',
+                    },
+                    '60%': {
+                        width: '1em',
+                        height: '1em',
+                        transform: 'translateX(1.5em)',
+                        'z-index': '2',
+                    },
+                    '75%': {
+                        width: '0px',
+                        height: '0px',
+                        transform: 'translateX(1.5em)',
+                        'z-index': '1',
+                    },
+                    '100%': {
+                        width: '0px',
+                        height: '0px',
+                        transform: 'translateX(1.5em)',
+                    },
+                },
+            },
+            screens: {
+                xs: '480px',
+                ...defaultTheme.screens,
             },
         },
     },
-    plugins: [require('tailwindcss-animation-delay')],
+    plugins: [require('@tailwindcss/forms'), require('tailwindcss-animation-delay')],
 };
 
 export default config;
