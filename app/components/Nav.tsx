@@ -8,12 +8,12 @@ const links = [
         href: '#',
     },
     {
-        name: 'Our Story',
-        href: '#story',
-    },
-    {
         name: 'When & Where',
         href: '#when-and-where',
+    },
+    {
+        name: 'Our Story',
+        href: '#story',
     },
     {
         name: 'Gallery',

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { FlipClock } from './components/FlipClock';
 import { Map } from './components/Map';
 import { Nav } from './components/Nav';
+import { OurTimeLine } from './components/TimeLine';
 
 export default function Home() {
     return (
@@ -10,7 +11,7 @@ export default function Home() {
             <Hero />
             <WhereAndWhen />
             <FlowerDivider />
-            <MrsMr />
+            <OurTimeLine />
         </>
     );
 }
@@ -64,7 +65,7 @@ function Hero() {
 function WhereAndWhen() {
     return (
         <section id="when-and-where">
-            <div className="relative mt-24 flex select-none flex-col items-center justify-center gap-4 text-neutral-900">
+            <div className="relative flex select-none flex-col items-center justify-center gap-4 bg-glade-50 pb-16 pt-24 text-neutral-900">
                 <h3 className="font-serif text-4xl text-neutral-700 drop-shadow-xl md:text-6xl">
                     May 18th, 2024
                 </h3>
@@ -88,19 +89,15 @@ function WhereAndWhen() {
 
 function FlowerDivider() {
     return (
-        <div className="relative mt-16 flex h-1 w-full items-center justify-center md:mt-24">
+        <div className="relative mt-24 flex h-1 w-full items-center justify-center">
             <Image
                 src="/images/flower-ornament.webp"
                 alt="A collection of greenery and purple flowers"
-                className="absolute "
+                className="absolute bottom-0 translate-y-4"
                 draggable={false}
                 width={400}
                 height={351}
             />
         </div>
     );
-}
-
-function MrsMr() {
-    return <div className="flex h-72 bg-glade-50"></div>;
 }
