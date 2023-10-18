@@ -1,3 +1,4 @@
+import 'animate.css/animate.min.css';
 import type { Metadata } from 'next';
 import { Alex_Brush, Mr_De_Haviland, Poppins, Varela_Round } from 'next/font/google';
 import Script from 'next/script';

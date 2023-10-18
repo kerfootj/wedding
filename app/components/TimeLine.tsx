@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export function OurTimeLine() {
     return (
@@ -89,32 +90,37 @@ function TimeLine(props: { events: Array<Event> }) {
 
             <div className="my-12 ml-8 sm:ml-16 md:ml-0">
                 {events.map(({ content, icon, image }, index) => (
-                    <div
+                    <ScrollAnimation
                         key={index}
-                        className={`relative flex flex-col py-6 ${
-                            index % 2 ? 'md:flex-row-reverse' : 'md:flex-row'
-                        } items-start justify-center gap-4 md:items-center md:gap-0`}
+                        animateIn="animate__fadeInUp"
+                        animateOnce
                     >
                         <div
-                            className={`flex flex-1 ${
-                                index % 2 ? 'justify-start' : 'justify-end'
-                            }`}
+                            className={`relative flex flex-col py-6 ${
+                                index % 2 ? 'md:flex-row-reverse' : 'md:flex-row'
+                            } items-start justify-center gap-4 md:items-center md:gap-0`}
                         >
-                            <EventImage image={image} />
-                        </div>
+                            <div
+                                className={`flex flex-1 ${
+                                    index % 2 ? 'justify-start' : 'justify-end'
+                                }`}
+                            >
+                                <EventImage image={image} />
+                            </div>
 
-                        <div className="absolute left-[-90px] top-8 z-10 mx-10 flex h-10 w-10 transform items-center justify-center rounded-full bg-neutral-100 duration-500 hover:rotate-[360deg] sm:left-[-118px] sm:h-16 sm:w-16 md:static md:order-none">
-                            <i className={`${icon} text-lilac-400`} />
-                        </div>
+                            <div className="absolute left-[-90px] top-8 z-10 mx-10 flex h-10 w-10 transform items-center justify-center rounded-full bg-neutral-100 duration-500 hover:rotate-[360deg] sm:left-[-118px] sm:h-16 sm:w-16 md:static md:order-none">
+                                <i className={`${icon} text-lilac-400`} />
+                            </div>
 
-                        <div
-                            className={`flex flex-1 flex-col ${
-                                index % 2 ? 'md:text-right' : 'text-left'
-                            }`}
-                        >
-                            <EventContent content={content} />
+                            <div
+                                className={`flex flex-1 flex-col ${
+                                    index % 2 ? 'md:text-right' : 'text-left'
+                                }`}
+                            >
+                                <EventContent content={content} />
+                            </div>
                         </div>
-                    </div>
+                    </ScrollAnimation>
                 ))}
             </div>
         </div>
