@@ -22,6 +22,7 @@ function Hero() {
             <div className="absolute inset-0 z-10 flex h-screen select-none flex-col items-center justify-center gap-3 text-gray-100 drop-shadow-dark sm:gap-8">
                 <div className="rotate-180">
                     <Image
+                        priority
                         src="/images/floral-divider.webp"
                         alt="A string of leaves and berries with a single flower in the middle"
                         className="scale-50 transform animate-fade-in-down opacity-0 animation-delay-1500 sm:scale-100"
@@ -40,6 +41,7 @@ function Hero() {
 
                 <div>
                     <Image
+                        priority
                         src="/images/floral-divider.webp"
                         alt="A string of leaves and berries with a single flower in the middle"
                         className="scale-50 transform animate-fade-in-down opacity-0 animation-delay-1500 sm:scale-100"
@@ -51,6 +53,7 @@ function Hero() {
             </div>
 
             <Image
+                priority
                 src="/images/leia-joel-walking.webp"
                 alt="Leia and Joel smiling, walking hand in hand through a field of natural grass"
                 className="h-screen w-screen scale-125 transform object-cover md:scale-125 lg:scale-100"
