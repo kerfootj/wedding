@@ -54,12 +54,12 @@ export function Nav() {
             >
                 <div className="flex flex-shrink-0 items-center">
                     <a href="#">
-                        <p className="font-cursive text-4xl font-semibold tracking-wider">
+                        <p className="mr-8 font-cursive text-4xl font-semibold tracking-wider">
                             Leia & Joel
                         </p>
                     </a>
                 </div>
-                <div className="hidden items-center justify-center gap-8 text-center sm:flex">
+                <div className="hidden items-center justify-center gap-8 text-center md:flex">
                     {links.map((link, index) => (
                         <div key={link.name} className="flex items-center gap-8">
                             {index > 0 && (
