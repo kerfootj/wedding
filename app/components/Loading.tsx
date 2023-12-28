@@ -1,3 +1,5 @@
+// issues with linting tailwindcss classes with custom animations
+/* eslint-disable */
 export function Loading() {
     return (
         <div className="text-xs">
@@ -10,3 +12,4 @@ export function Loading() {
         </div>
     );
 }
+/* eslint-enable */
