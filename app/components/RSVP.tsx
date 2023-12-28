@@ -15,18 +15,13 @@ export type RSVPResponse = {
 
 export function RSVP() {
     return (
-        <section id="rsvp" className="relative h-screen w-screen overflow-x-hidden">
-            <Image
-                src="/images/leia-joel-walking-away.webp"
-                alt="Leia and Joel smiling, walking away hand in hand down a path surrounded by sagebrush."
-                className="absolute h-screen w-screen scale-125 transform object-cover before:absolute before:left-0 before:top-0 before:inline-block before:h-screen before:w-screen before:bg-gradient-to-b before:from-white before:content-[''] md:scale-125 lg:scale-100"
-                draggable={false}
-                width={4000}
-                height={2667}
-            />
-            <div className="absolute left-0 top-0 h-screen w-screen bg-gradient-to-b from-white via-white via-10%" />
+        <section
+            id="rsvp"
+            className="relative w-screen overflow-x-hidden bg-[url(/images/leia-joel-walking-away.webp)] bg-cover bg-center bg-no-repeat"
+        >
+            <div className="absolute h-full w-full bg-gradient-to-b from-white via-white via-5%" />
 
-            <div className="flex h-full w-full items-center justify-center px-0 text-neutral-700 sm:px-4">
+            <div className="flex h-full w-full items-center justify-center px-0 text-neutral-700 sm:my-52 sm:px-4">
                 <RSVPForm />
             </div>
         </section>
