@@ -4,7 +4,7 @@ import '../styles/flip-clock.sass';
 
 import { useEffect, useState } from 'react';
 
-const theBigDay = new Date('2024-05-18T20:00:00.000Z');
+const theBigDay = new Date('2024-05-18T22:00:00.000Z');
 
 export function FlipClock() {
     const [days, setDays] = useState(0);
