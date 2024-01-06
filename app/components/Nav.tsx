@@ -16,10 +16,6 @@ const links = [
         href: '#story',
     },
     {
-        name: 'Gallery',
-        href: '#gallery',
-    },
-    {
         name: 'RSVP',
         href: '#rsvp',
     },

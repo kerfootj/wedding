@@ -4,7 +4,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 export function OurTimeLine() {
     return (
-        <div className="ml-8 mr-2 flex flex-col items-center py-12 md:mx-8">
+        <div id="story" className="ml-8 mr-2 flex flex-col items-center py-12 md:mx-8">
             <h3 className="mb-12 font-serif text-4xl text-neutral-700 drop-shadow-xl md:text-6xl">
                 Our Story
             </h3>
