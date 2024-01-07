@@ -4,10 +4,6 @@ import { useEffect, useState } from 'react';
 
 const links = [
     {
-        name: 'Home',
-        href: '#',
-    },
-    {
         name: 'When',
         href: '#when',
     },
@@ -31,30 +27,35 @@ const links = [
 
 export function Nav() {
     const [selected, setSelected] = useState('');
-    const [position, setPosition] = useState(0);
+    const [textColor, setTextColor] = useState('text-gray-100');
+    const [bgColor, setBGColor] = useState('bg-transparent');
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            setPosition(window.scrollY);
+            setBGColor(
+                window.scrollY < 32 && !mobileMenuOpen ? 'bg-transparent' : 'bg-white'
+            );
+            setTextColor(
+                window.scrollY < 32 && !mobileMenuOpen
+                    ? 'text-gray-100'
+                    : 'text-neutral-900'
+            );
         };
 
         window.addEventListener('scroll', handleScroll);
 
-        return () => window.removeEventListener('scroll', handleScroll);
-    });
+        handleScroll();
 
-    const textColor = () => (position < 32 ? 'text-gray-100' : 'text-neutral-900');
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [mobileMenuOpen]);
 
     return (
-        <header
-            className={`fixed z-50 flex w-full select-none justify-center border-b px-4 transition-colors duration-500 sm:px-6 lg:px-8 ${
-                position < 32 ? 'bg-transparent' : 'bg-white'
-            }`}
+        <nav
+            className={`fixed z-50 w-full select-none transition-colors duration-500 lg:px-8 ${bgColor} overflow-hidden`}
         >
             <div
-                className={`flex h-16 w-full max-w-7xl justify-between transition-colors duration-300 ${
-                    position < 32 ? 'text-gray-100' : 'text-neutral-900'
-                }`}
+                className={`flex h-16 w-full max-w-7xl justify-between border-b px-6 transition-colors duration-300 ${textColor}`}
             >
                 <div className="flex flex-shrink-0 items-center">
                     <a href="#">
@@ -63,6 +64,44 @@ export function Nav() {
                         </p>
                     </a>
                 </div>
+
+                <div className="flex h-full items-center">
+                    <button
+                        className={`flex h-10 w-10 flex-col items-center justify-center overflow-hidden rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden ${textColor}`}
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    >
+                        <div
+                            className={`h-1 w-[30px] rounded-md transition-all duration-500 ${
+                                mobileMenuOpen
+                                    ? 'w-[36px] translate-y-[4px] rotate-45 bg-neutral-700'
+                                    : `w-[30px] -translate-y-1 ${textColor.replace(
+                                          'text',
+                                          'bg'
+                                      )}`
+                            }`}
+                        />
+
+                        <div
+                            className={`h-1 w-[30px] rounded-md transition-all duration-500 ${
+                                mobileMenuOpen
+                                    ? '-translate-x-10 bg-neutral-700'
+                                    : `translate-x-0 ${textColor.replace('text', 'bg')}`
+                            }`}
+                        />
+
+                        <div
+                            className={`h-1 w-[30px] rounded-md transition-all duration-500 ${
+                                mobileMenuOpen
+                                    ? 'w-[36px] -translate-y-[4px] -rotate-45 bg-neutral-700'
+                                    : `w-[30px] translate-y-1 ${textColor.replace(
+                                          'text',
+                                          'bg'
+                                      )}`
+                            }`}
+                        />
+                    </button>
+                </div>
+
                 <div className="hidden items-center justify-center gap-8 text-center md:flex">
                     {links.map((link, index) => (
                         <div key={link.name} className="flex items-center gap-8">
@@ -71,7 +110,7 @@ export function Nav() {
                             )}
                             <a
                                 href={link.href}
-                                className={`inline-flex items-center text-sm font-semibold transition-colors ${textColor()} ${
+                                className={`inline-flex items-center text-sm font-semibold transition-colors ${textColor} ${
                                     selected === link.name
                                         ? 'text-lilac-300'
                                         : 'hover:text-lilac-400'
@@ -84,6 +123,30 @@ export function Nav() {
                     ))}
                 </div>
             </div>
-        </header>
+
+            <div
+                className={`flex flex-col gap-3 bg-white transition-all duration-300 ${
+                    mobileMenuOpen ? 'h-[310px] border-b-2 pt-2' : 'h-0'
+                }`}
+            >
+                {links.map((link) => (
+                    <a
+                        key={link.href}
+                        href={link.href}
+                        className={`mx-2 inline-flex items-center rounded-md border-2 border-lilac-100 bg-white p-2 text-lg font-semibold text-lilac-500 transition-colors active:bg-white ${
+                            selected === link.name
+                                ? 'text-lilac-300'
+                                : 'hover:text-lilac-400'
+                        }`}
+                        onClick={() => {
+                            setMobileMenuOpen(false);
+                            setSelected(link.name);
+                        }}
+                    >
+                        {link.name}
+                    </a>
+                ))}
+            </div>
+        </nav>
     );
 }
