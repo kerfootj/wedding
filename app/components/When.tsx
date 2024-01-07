@@ -39,7 +39,7 @@ export function When() {
             id="when"
             className="relative flex select-none flex-col items-center justify-center gap-4 bg-glade-50 pb-16 pt-24 text-neutral-900"
         >
-            <h3 className="font-serif text-6xl text-neutral-700 drop-shadow-xl">
+            <h3 className="text-center font-serif text-6xl text-neutral-700 drop-shadow-xl">
                 May 18th, 2024
             </h3>
 
@@ -51,7 +51,7 @@ export function When() {
                 Schedule of Events
             </h4>
 
-            <div className="mx-2 grid w-full max-w-[1000px] grid-cols-1 gap-4 md:w-10/12 md:grid-cols-2">
+            <div className="grid w-full max-w-[1000px] grid-cols-1 gap-4 px-2 md:w-10/12 md:grid-cols-2 md:px-0">
                 {schedule.map((event) => (
                     <div
                         key={event.what}

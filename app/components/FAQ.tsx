@@ -133,12 +133,15 @@ export function FAQ() {
                         animateOnce
                     >
                         <div className="flex w-full gap-4">
-                            <div className="group relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full ring-2 ring-lilac-700 transition-colors hover:bg-white hover:ring-4 hover:ring-lilac-200 hover:transition-colors">
-                                <i
-                                    className={`fa-lg group-hover:animate-to-right-from-left ${qAndA.icon} text-lilac-700`}
-                                />
+                            <div className="ml-2 w-10 md:ml-0">
+                                <div className="group flex h-10 w-10 items-center justify-center overflow-hidden rounded-full ring-2 ring-lilac-700 transition-colors hover:bg-white hover:ring-4 hover:ring-lilac-200 hover:transition-colors">
+                                    <i
+                                        className={`fa-lg group-hover:animate-to-right-from-left ${qAndA.icon} text-lilac-700`}
+                                    />
+                                </div>
                             </div>
-                            <div className="">
+
+                            <div className="flex flex-col">
                                 <p className="text-xl font-semibold">{qAndA.question}</p>
                                 <p className="max-w-2xl text-lg">{qAndA.answer}</p>
                             </div>
