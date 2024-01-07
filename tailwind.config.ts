@@ -12,6 +12,7 @@ const config: Config = {
             animation: {
                 'fade-in-down': 'fade-in-down 0.5s ease-out 0s 1 forwards',
                 shuffle: 'shuffle 2s infinite both',
+                'to-right-from-left': 'to-right-from-left 0.3s forwards',
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -96,6 +97,18 @@ const config: Config = {
                         width: '0px',
                         height: '0px',
                         transform: 'translateX(1.5em)',
+                    },
+                },
+                'to-right-from-left': {
+                    '49%': {
+                        transform: 'translate(100%)',
+                    },
+                    '50%': {
+                        opacity: '0',
+                        transform: 'translate(-100%)',
+                    },
+                    '51%': {
+                        opacity: '1',
                     },
                 },
             },

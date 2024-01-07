@@ -1,0 +1,26 @@
+import { Map } from './Map';
+
+export function Where() {
+    return (
+        <section
+            id="where"
+            className="relative flex select-none flex-col items-center justify-center gap-4 bg-glade-50 pb-16 pt-24 text-neutral-900"
+        >
+            <h3 className="mb-8 font-serif text-6xl text-neutral-700 drop-shadow-xl">
+                Venue
+            </h3>
+
+            <p className="text-4xl">The Hoot Residence</p>
+            <p className="text-xl">6270 Westsyde Road, Kamloops BC</p>
+            <p className="mt-8 max-w-2xl text-center text-lg">
+                Drive approximately 10 minutes past The Dunes golf course. The driveway is
+                located on the left side of the road (third driveway past the bridge) and
+                the parking area will be clearly signed.
+            </p>
+
+            <div className="pb-12 pt-4">
+                <Map />
+            </div>
+        </section>
+    );
+}

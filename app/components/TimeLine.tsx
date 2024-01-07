@@ -13,12 +13,11 @@ export function OurTimeLine() {
                 events={[
                     {
                         image: {
-                            src: '/images/leia-joel-walking.webp',
+                            src: '/images/leia-joel-cadets.webp',
                             alt: 'Leia and Joel Waling',
                         },
                         content: {
                             title: 'First time we meet',
-                            description: 'Some flavour text.',
                             date: 'September 2012',
                         },
                         icon: 'fa-solid fa-paper-plane',
@@ -30,7 +29,6 @@ export function OurTimeLine() {
                         },
                         content: {
                             title: 'We fall in love each other',
-                            description: 'Some flavour text.',
                             date: 'April 18, 2015',
                         },
                         icon: 'fa-solid fa-heart',
@@ -42,19 +40,17 @@ export function OurTimeLine() {
                         },
                         content: {
                             title: 'He asked?.. She said Yes',
-                            description: 'Some flavour text.',
                             date: 'September 18, 2022',
                         },
                         icon: 'fa-solid fa-leaf',
                     },
                     {
                         image: {
-                            src: '/images/leia-joel-sitting.webp',
+                            src: '/images/leia-joel-close.webp',
                             alt: 'Leia and Joel dressed nicely having a laugh while sitting in tall natural flowers and grass in Kamloops.',
                         },
                         content: {
                             title: 'The Big Day',
-                            description: 'Coming soon!',
                             date: 'May 18, 2024',
                         },
                         icon: 'fa-solid fa-calendar-days',
@@ -72,7 +68,6 @@ type Event = {
     };
     content: {
         title: string;
-        description: string;
         date: string;
     };
     icon: string;
@@ -144,15 +139,13 @@ function EventImage(props: { image: Event['image'] }) {
 }
 
 function EventContent(props: { content: Event['content'] }) {
-    const { date, description, title } = props.content;
+    const { date, title } = props.content;
 
     return (
         <>
-            <h4 className="pb-2 font-serif text-4xl text-neutral-700">{title}</h4>
+            <h4 className="pb-2 font-serif text-4xl text-neutral-800">{title}</h4>
 
-            <span className="pb-3 text-sm text-lilac-400">{date}</span>
-
-            <p className="text-neutral-500">{description}</p>
+            <span className="font-semibold text-lilac-400">{date}</span>
         </>
     );
 }

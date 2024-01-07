@@ -8,8 +8,16 @@ const links = [
         href: '#',
     },
     {
-        name: 'When & Where',
-        href: '#when-and-where',
+        name: 'When',
+        href: '#when',
+    },
+    {
+        name: 'Where',
+        href: '#where',
+    },
+    {
+        name: 'FAQ',
+        href: '#faq',
     },
     {
         name: 'Our Story',
