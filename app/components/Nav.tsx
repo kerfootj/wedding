@@ -29,6 +29,7 @@ export function Nav() {
     const [selected, setSelected] = useState('');
     const [textColor, setTextColor] = useState('text-gray-100');
     const [bgColor, setBGColor] = useState('bg-transparent');
+    const [iconColor, setIconColor] = useState('bg-gray-100');
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     useEffect(() => {
@@ -41,6 +42,8 @@ export function Nav() {
                     ? 'text-gray-100'
                     : 'text-neutral-900'
             );
+
+            setIconColor(window.scrollY < 32 ? 'bg-gray-100' : 'bg-neutral-700');
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -52,10 +55,10 @@ export function Nav() {
 
     return (
         <nav
-            className={`fixed z-50 w-full select-none transition-colors duration-500 lg:px-8 ${bgColor} overflow-hidden`}
+            className={`fixed z-50 w-full select-none overflow-hidden transition-colors duration-500 ${bgColor}`}
         >
             <div
-                className={`flex h-16 w-full max-w-7xl justify-between border-b px-6 transition-colors duration-300 ${textColor}`}
+                className={`flex h-16 w-full max-w-7xl justify-between border-b px-6 transition-colors duration-300 lg:px-8 ${textColor}`}
             >
                 <div className="flex flex-shrink-0 items-center">
                     <a href="#">
@@ -74,10 +77,7 @@ export function Nav() {
                             className={`h-1 w-[30px] rounded-md transition-all duration-500 ${
                                 mobileMenuOpen
                                     ? 'w-[36px] translate-y-[4px] rotate-45 bg-neutral-700'
-                                    : `w-[30px] -translate-y-1 ${textColor.replace(
-                                          'text',
-                                          'bg'
-                                      )}`
+                                    : `w-[30px] -translate-y-1 ${iconColor}`
                             }`}
                         />
 
@@ -85,7 +85,7 @@ export function Nav() {
                             className={`h-1 w-[30px] rounded-md transition-all duration-500 ${
                                 mobileMenuOpen
                                     ? '-translate-x-10 bg-neutral-700'
-                                    : `translate-x-0 ${textColor.replace('text', 'bg')}`
+                                    : `translate-x-0 ${iconColor}`
                             }`}
                         />
 
@@ -93,10 +93,7 @@ export function Nav() {
                             className={`h-1 w-[30px] rounded-md transition-all duration-500 ${
                                 mobileMenuOpen
                                     ? 'w-[36px] -translate-y-[4px] -rotate-45 bg-neutral-700'
-                                    : `w-[30px] translate-y-1 ${textColor.replace(
-                                          'text',
-                                          'bg'
-                                      )}`
+                                    : `w-[30px] translate-y-1 ${iconColor}`
                             }`}
                         />
                     </button>
