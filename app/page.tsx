@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { BGImage } from './components/BGImage';
 import { FAQ } from './components/FAQ';
+import { ImageLoader } from './components/ImageLoader';
 import { Nav } from './components/Nav';
 import { RSVP } from './components/RSVP';
 import { OurTimeLine } from './components/TimeLine';
@@ -9,8 +10,9 @@ import { Where } from './components/Where';
 
 export default function Home() {
     return (
-        <>
+        <ImageLoader>
             <Nav />
+
             <BGImage imageUrl="/images/leia-joel-walking.webp">
                 <section id="hero" className="h-screen w-screen">
                     <div className="flex h-screen select-none flex-col items-center justify-center gap-3 text-gray-100 drop-shadow-dark sm:gap-8">
@@ -61,22 +63,8 @@ export default function Home() {
             <BGImage imageUrl="/images/leia-joel-sitting.webp" />
 
             <OurTimeLine />
-            <RSVP />
-        </>
-    );
-}
 
-function FlowerDivider() {
-    return (
-        <div className="relative mt-24 flex h-1 w-full items-center justify-center">
-            <Image
-                src="/images/flower-ornament.webp"
-                alt="A collection of greenery and purple flowers"
-                className="absolute bottom-0 translate-y-4"
-                draggable={false}
-                width={400}
-                height={351}
-            />
-        </div>
+            <RSVP />
+        </ImageLoader>
     );
 }
