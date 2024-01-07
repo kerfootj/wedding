@@ -58,66 +58,68 @@ export function Nav() {
             className={`fixed z-50 w-full select-none overflow-hidden transition-colors duration-500 ${bgColor}`}
         >
             <div
-                className={`flex h-16 w-full max-w-7xl justify-between border-b px-6 transition-colors duration-300 lg:px-8 ${textColor}`}
+                className={`flex h-16 w-full justify-center border-b px-6 transition-colors duration-300 lg:px-8 ${textColor}`}
             >
-                <div className="flex flex-shrink-0 items-center">
-                    <a href="#">
-                        <p className="mr-8 font-cursive text-4xl font-semibold tracking-wider">
-                            Leia & Joel
-                        </p>
-                    </a>
-                </div>
+                <div className="flex w-full max-w-7xl items-center justify-between">
+                    <div className="flex flex-shrink-0 items-center">
+                        <a href="#">
+                            <p className="mr-8 font-cursive text-4xl font-semibold tracking-wider">
+                                Leia & Joel
+                            </p>
+                        </a>
+                    </div>
 
-                <div className="flex h-full items-center">
-                    <button
-                        className={`flex h-10 w-10 flex-col items-center justify-center overflow-hidden rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden ${textColor}`}
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    >
-                        <div
-                            className={`h-1 w-[30px] rounded-md transition-all duration-500 ${
-                                mobileMenuOpen
-                                    ? 'w-[36px] translate-y-[4px] rotate-45 bg-neutral-700'
-                                    : `w-[30px] -translate-y-1 ${iconColor}`
-                            }`}
-                        />
-
-                        <div
-                            className={`h-1 w-[30px] rounded-md transition-all duration-500 ${
-                                mobileMenuOpen
-                                    ? '-translate-x-10 bg-neutral-700'
-                                    : `translate-x-0 ${iconColor}`
-                            }`}
-                        />
-
-                        <div
-                            className={`h-1 w-[30px] rounded-md transition-all duration-500 ${
-                                mobileMenuOpen
-                                    ? 'w-[36px] -translate-y-[4px] -rotate-45 bg-neutral-700'
-                                    : `w-[30px] translate-y-1 ${iconColor}`
-                            }`}
-                        />
-                    </button>
-                </div>
-
-                <div className="hidden items-center justify-center gap-8 text-center md:flex">
-                    {links.map((link, index) => (
-                        <div key={link.name} className="flex items-center gap-8">
-                            {index > 0 && (
-                                <i className="fas fa-heart fa-2xs text-lilac-300" />
-                            )}
-                            <a
-                                href={link.href}
-                                className={`inline-flex items-center text-sm font-semibold transition-colors ${textColor} ${
-                                    selected === link.name
-                                        ? 'text-lilac-300'
-                                        : 'hover:text-lilac-400'
+                    <div className="flex h-full items-center">
+                        <button
+                            className={`flex h-10 w-10 flex-col items-center justify-center overflow-hidden rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden ${textColor}`}
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        >
+                            <div
+                                className={`h-1 w-[30px] rounded-md transition-all duration-500 ${
+                                    mobileMenuOpen
+                                        ? 'w-[36px] translate-y-[4px] rotate-45 bg-neutral-700'
+                                        : `w-[30px] -translate-y-1 ${iconColor}`
                                 }`}
-                                onClick={() => setSelected(link.name)}
-                            >
-                                {link.name}
-                            </a>
-                        </div>
-                    ))}
+                            />
+
+                            <div
+                                className={`h-1 w-[30px] rounded-md transition-all duration-500 ${
+                                    mobileMenuOpen
+                                        ? '-translate-x-10 bg-neutral-700'
+                                        : `translate-x-0 ${iconColor}`
+                                }`}
+                            />
+
+                            <div
+                                className={`h-1 w-[30px] rounded-md transition-all duration-500 ${
+                                    mobileMenuOpen
+                                        ? 'w-[36px] -translate-y-[4px] -rotate-45 bg-neutral-700'
+                                        : `w-[30px] translate-y-1 ${iconColor}`
+                                }`}
+                            />
+                        </button>
+                    </div>
+
+                    <div className="hidden items-center justify-center gap-8 text-center md:flex">
+                        {links.map((link, index) => (
+                            <div key={link.name} className="flex items-center gap-8">
+                                {index > 0 && (
+                                    <i className="fas fa-heart fa-2xs text-lilac-300" />
+                                )}
+                                <a
+                                    href={link.href}
+                                    className={`inline-flex items-center text-sm font-semibold transition-colors ${textColor} ${
+                                        selected === link.name
+                                            ? 'text-lilac-300'
+                                            : 'hover:text-lilac-400'
+                                    }`}
+                                    onClick={() => setSelected(link.name)}
+                                >
+                                    {link.name}
+                                </a>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
 

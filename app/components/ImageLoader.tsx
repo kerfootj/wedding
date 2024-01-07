@@ -13,12 +13,15 @@ export function ImageLoader(props: PropsWithChildren<{}>) {
             {loaded ? children : <Loading />}
 
             <Image
+                className="hidden"
                 src="/images/leia-joel-walking.webp"
                 alt="loader"
                 priority
-                width={0}
-                height={0}
-                onLoad={() => setLoaded(true)}
+                width={1000}
+                height={1000}
+                onLoad={() => {
+                    setLoaded(true);
+                }}
             />
         </>
     );
