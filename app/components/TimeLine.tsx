@@ -149,7 +149,7 @@ function EventContent(props: { content: Event['content'] }) {
         <>
             <h4 className="pb-2 font-serif text-4xl text-neutral-800">{title}</h4>
 
-            <span className="hover:animate-rainbow font-semibold text-lilac-400 transition-colors">
+            <span className="font-semibold text-lilac-400 transition-colors hover:animate-rainbow">
                 {date}
             </span>
         </>
