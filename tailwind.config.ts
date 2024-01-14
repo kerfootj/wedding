@@ -11,6 +11,8 @@ const config: Config = {
         extend: {
             animation: {
                 'fade-in-down': 'fade-in-down 0.5s ease-out 0s 1 forwards',
+                'fade-in-right': 'fade-in-right 0.5s ease-out 0s 1 forwards',
+                rainbow: 'rainbow 5s infinite',
                 shuffle: 'shuffle 2s infinite both',
                 'to-right-from-left': 'to-right-from-left 0.3s forwards',
             },
@@ -63,6 +65,48 @@ const config: Config = {
                     '100%': {
                         opacity: '1',
                         transform: 'translateY(0)',
+                    },
+                },
+                'fade-in-right': {
+                    '0%': {
+                        opacity: '0',
+                        transform: 'translateX(-128px)',
+                    },
+                    '100%': {
+                        opacity: '1',
+                        transform: 'translateY(0)',
+                    },
+                },
+                rainbow: {
+                    '0%': {
+                        color: '#FF595E',
+                    },
+                    '10%': {
+                        color: '#FF924C',
+                    },
+                    '20%': {
+                        color: '#FFCA3A',
+                    },
+                    '30%': {
+                        color: '#C5CA30',
+                    },
+                    '40%': {
+                        color: '#8AC926',
+                    },
+                    '50%': {
+                        color: '#36949D',
+                    },
+                    '60%': {
+                        color: '#1982C4',
+                    },
+                    '70%': {
+                        color: '#4267AC',
+                    },
+                    '80%': {
+                        color: '#565AA0',
+                    },
+                    '90%': {
+                        color: '#6A4C93',
                     },
                 },
                 shuffle: {

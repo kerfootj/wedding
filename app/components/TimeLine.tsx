@@ -4,7 +4,11 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 export function OurTimeLine() {
     return (
-        <div id="story" className="ml-8 mr-2 flex flex-col items-center py-12 md:mx-8">
+        // set a min height on this div so linking to #RSVP is consistent because the image heights are dynamic based on screen size
+        <div
+            id="story"
+            className="ml-8 mr-2 flex min-h-[3000px] select-none flex-col items-center py-12 md:mx-8 md:min-h-[2000px]"
+        >
             <h3 className="mb-12 font-serif text-4xl text-neutral-700 drop-shadow-xl md:text-6xl">
                 Our Story
             </h3>
@@ -145,7 +149,9 @@ function EventContent(props: { content: Event['content'] }) {
         <>
             <h4 className="pb-2 font-serif text-4xl text-neutral-800">{title}</h4>
 
-            <span className="font-semibold text-lilac-400">{date}</span>
+            <span className="hover:animate-rainbow font-semibold text-lilac-400 transition-colors">
+                {date}
+            </span>
         </>
     );
 }

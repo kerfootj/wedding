@@ -252,7 +252,7 @@ function SearchResults(props: {
                 <div
                     key={name}
                     onClick={() => onSelect(name)}
-                    className="flex w-full cursor-pointer items-center justify-between rounded-md border-2 border-gray-200 px-4 py-2 text-neutral-700 transition-all hover:border-glade-400 hover:shadow [&>i]:hover:text-glade-700"
+                    className="animate-fade-in-right flex w-full cursor-pointer items-center justify-between rounded-md border-2 border-gray-200 px-4 py-2 text-neutral-700 transition-all hover:border-glade-400 hover:shadow [&>i]:hover:text-glade-700"
                 >
                     <p>{firstNameLastInitial(name)}</p>
                     <i className="fa-solid fa-angle-right" />

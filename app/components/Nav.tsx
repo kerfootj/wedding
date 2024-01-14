@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const links = [
@@ -44,6 +45,18 @@ export function Nav() {
             );
 
             setIconColor(window.scrollY < 32 ? 'bg-gray-100' : 'bg-neutral-700');
+
+            const [current] = links
+                .filter((link) => {
+                    const top = document
+                        .getElementById(link.href.replace('#', ''))
+                        ?.getBoundingClientRect()?.top;
+
+                    return top !== undefined && top < 32;
+                })
+                .slice(-1);
+
+            setSelected(current?.name || '');
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -62,7 +75,7 @@ export function Nav() {
             >
                 <div className="flex w-full max-w-7xl items-center justify-between">
                     <div className="flex flex-shrink-0 items-center">
-                        <a href="#">
+                        <a href="#" onClick={() => setSelected('')}>
                             <p className="mr-8 font-cursive text-4xl font-semibold tracking-wider">
                                 Leia & Joel
                             </p>
@@ -108,12 +121,11 @@ export function Nav() {
                                 )}
                                 <a
                                     href={link.href}
-                                    className={`inline-flex items-center text-sm font-semibold transition-colors ${textColor} ${
+                                    className={`inline-flex items-center text-sm font-semibold transition-colors hover:text-lilac-400 ${
                                         selected === link.name
                                             ? 'text-lilac-300'
-                                            : 'hover:text-lilac-400'
+                                            : textColor
                                     }`}
-                                    onClick={() => setSelected(link.name)}
                                 >
                                     {link.name}
                                 </a>
@@ -124,26 +136,25 @@ export function Nav() {
             </div>
 
             <div
-                className={`flex flex-col gap-3 bg-white transition-all duration-300 ${
-                    mobileMenuOpen ? 'h-[310px] border-b-2 pt-2' : 'h-0'
+                className={`flex flex-col gap-1 bg-white transition-all duration-300 ${
+                    mobileMenuOpen ? 'h-[270px] border-b-2 pt-2' : 'h-0'
                 }`}
             >
                 {links.map((link) => (
-                    <a
+                    <Link
                         key={link.href}
                         href={link.href}
-                        className={`mx-2 inline-flex items-center rounded-md border-2 border-lilac-100 bg-white p-2 text-lg font-semibold text-lilac-500 transition-colors active:bg-white ${
+                        className={`mx-2 inline-flex items-center rounded-md border-2 border-white bg-white p-2 text-lg font-semibold text-lilac-500 transition-colors hover:border-lilac-100 active:bg-white ${
                             selected === link.name
                                 ? 'text-lilac-300'
                                 : 'hover:text-lilac-400'
                         }`}
                         onClick={() => {
                             setMobileMenuOpen(false);
-                            setSelected(link.name);
                         }}
                     >
                         {link.name}
-                    </a>
+                    </Link>
                 ))}
             </div>
         </nav>

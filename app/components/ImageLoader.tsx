@@ -1,16 +1,25 @@
 'use client';
 
 import Image from 'next/image';
-import { PropsWithChildren, useState } from 'react';
+import { PropsWithChildren, useEffect, useState } from 'react';
 
 export function ImageLoader(props: PropsWithChildren<{}>) {
     const { children } = props;
 
+    // state for whether the image is loaded or not
     const [loaded, setLoaded] = useState(false);
+    // state to force a minimum delay so the loader doesn't flash on and off screen
+    const [delayed, setDelayed] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setDelayed(true), 2500);
+
+        return () => clearTimeout(timer);
+    }, []);
 
     return (
         <>
-            {loaded ? children : <Loading />}
+            {loaded && delayed ? children : <Loading />}
 
             <Image
                 className="hidden"
