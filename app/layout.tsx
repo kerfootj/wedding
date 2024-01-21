@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from '@next/third-parties/google';
 import 'animate.css/animate.min.css';
 import type { Metadata } from 'next';
 import { Alex_Brush, Mr_De_Haviland, Poppins, Varela_Round } from 'next/font/google';
@@ -88,6 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 />
             </head>
             <body>{children}</body>
+            <GoogleAnalytics gaId="G-SN6HGMWEWQ" />
         </html>
     );
 }
