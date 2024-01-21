@@ -1,4 +1,3 @@
-import { GoogleAnalytics } from '@next/third-parties/google';
 import 'animate.css/animate.min.css';
 import type { Metadata } from 'next';
 import { Alex_Brush, Mr_De_Haviland, Poppins, Varela_Round } from 'next/font/google';
@@ -88,8 +87,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     crossOrigin="anonymous"
                 />
             </head>
+
+            <Script
+                async
+                src="https://www.googletagmanager.com/gtag/js?id=G-SN6HGMWEWQ"
+            />
+            <Script id="ga">
+                {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-SN6HGMWEWQ');   
+                `}
+            </Script>
             <body>{children}</body>
-            <GoogleAnalytics gaId="G-SN6HGMWEWQ" />
         </html>
     );
 }
