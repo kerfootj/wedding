@@ -28,7 +28,7 @@ const invitees = [
     ['Jimmy Culver', 'Bert Culver'],
     ['Trish Culver'],
     ['Shelley Derker', 'Darrell Derker'],
-    ['Jane Stewart', 'Ben Kosten', 'Rory Stewart', 'Violet Kosten'],
+    ['Jane Stewart', 'Ben Kosten', 'Rory Fisher', 'Violet Kosten'],
     ['Sarah Oyer', 'Quinn Oyer'],
     ['Morgan Jules'],
 ];
