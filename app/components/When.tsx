@@ -7,8 +7,8 @@ export function When() {
             when: '2:00 PM',
             details: (
                 <>
-                    <b>Plan to arrive 30 minutes early</b>. The ceremony site is a couple
-                    minute walk from parking.
+                    <b>Plan to arrive 30 minutes early</b>. The ceremony site is a
+                    couple-minute walk from parking.
                 </>
             ),
         },

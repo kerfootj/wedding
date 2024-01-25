@@ -24,7 +24,7 @@ export function FAQ() {
             question: `What to wear?`,
             answer: (
                 <>
-                    A suit or dress shirt and pants for the gentleman. A dress or nice
+                    A suit or dress shirt and pants for the gentlemen. A dress or nice
                     slacks for the ladies. Please save your jeans, t-shirts, and cowboy
                     boots for the rodeo.
                 </>
