@@ -21,7 +21,7 @@ const invitees = [
     ['Shael Huska', 'Steph Koby'],
     ['Tracy Hoot', 'Paul Hoot'],
     ['Lauren Champagne', 'Andrew Champagne'],
-    ['Morgan Forshner', 'Trenton Forshner'],
+    ['Morgan Forshner', 'Trenton Forshner', 'Violet Forshner'],
     ['Catherine Chapman', 'Ryan Chapman'],
     ['Mariana Chapman', 'Nolan Chapman'],
     ['Bailey Chapman', 'Nathan Chapman'],
