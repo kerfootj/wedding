@@ -148,7 +148,7 @@ function RSVPCard() {
             </h3>
 
             <p className="text-md px-8 pb-8 text-center font-sans text-gray-500">
-                To RSVP search for you name below and let us know if you will be able to
+                To RSVP search for your name below and let us know if you will be able to
                 attend. Kindly reply by the <b>first of March</b>.
             </p>
 
