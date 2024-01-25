@@ -43,7 +43,7 @@ export function When() {
                 May 18th, 2024
             </h3>
 
-            <div className="my-12">
+            <div className="my-12 overflow-hidden px-4">
                 <FlipClock />
             </div>
 
