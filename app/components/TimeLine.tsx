@@ -32,7 +32,7 @@ export function OurTimeLine() {
                             alt: 'Leia and Joel flying a Cessna together over Victoria.',
                         },
                         content: {
-                            title: 'We fall in love each other',
+                            title: 'We fall in love with each other',
                             date: 'April 18, 2015',
                         },
                         icon: 'fa-solid fa-heart',
